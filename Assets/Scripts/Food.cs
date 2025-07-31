@@ -3,6 +3,7 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public int points;
+    public float fullPoints;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,5 +22,6 @@ public class Food : MonoBehaviour
         // another idea: check whether child container or sushi was clicked from the Item Game object instead?
         Destroy(gameObject);
         GameManager.Instance.AddToScore(points);
+        GameManager.Instance.AddToFullness(fullPoints);
     }
 }

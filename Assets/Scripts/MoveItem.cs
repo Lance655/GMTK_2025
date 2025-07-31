@@ -3,7 +3,7 @@ using UnityEngine;
 public class MoveItem : MonoBehaviour
 {
     public float rightSpeed = 1;
-    public float leftSpeed = 10.0f;
+    public float leftSpeed = 15.0f;
     public bool goingLeft = false;
     private float rightBoundX = 12f;
     private float leftBoundX = -15f;

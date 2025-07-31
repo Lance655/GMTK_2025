@@ -38,7 +38,7 @@ public class ItemSpawner : MonoBehaviour
     {
         while (true)
         {
-            float spawnRateFast = Random.Range(10.0f, 30.0f);
+            float spawnRateFast = Random.Range(5.0f, 15.0f);
 
             yield return new WaitForSeconds(spawnRateFast);
             Vector3 spawnPos = new Vector3(spawnXFast, spawnYFast, 0);
