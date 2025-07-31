@@ -1,20 +1,32 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class SushiSet
+{
+    public GameObject signPlate;
+    public List<GameObject> ItemPrefabs;
+}
 
 public class ItemSpawner : MonoBehaviour
 {
+    public List<SushiSet> sushiSets;
+    public List<GameObject> singleSushiList;  // For random singles
     public GameObject item;
-    public float spawnRate = 2.5f;
+    public float spawnInterval = 2.5f;
     private float spawnX = -10f;
     private float spawnY = -1.5f;
     private float spawnXFast = 11.0f;
     private float spawnYFast = 2.7f;
 
+    private Vector3 spawnPos = new Vector3(-10f, -1.5f, 0); // copied position from spawnX, spawnY
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine("spawnItem");
-        StartCoroutine("spawnItemFast");
+        StartCoroutine("SpawnRoutine");
+        StartCoroutine("SpawnFastLane");
     }
 
     // Update is called once per frame
@@ -23,18 +35,26 @@ public class ItemSpawner : MonoBehaviour
 
     }
 
-    IEnumerator spawnItem()
+    IEnumerator SpawnRoutine()
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnRate);
-            Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
+            yield return new WaitForSeconds(spawnInterval);
 
-            Instantiate(item, spawnPos, item.transform.rotation);
+            float coinFlip = Random.Range(0f, 1f);
+            if (coinFlip > 0.9)
+            {
+                SpawnSinglePlate();
+            }
+            else
+            {
+                yield return StartCoroutine(SpawnSushiSet()); // wait until the set is done before proceeding
+            }
         }
     }
 
-    IEnumerator spawnItemFast()
+
+    IEnumerator SpawnFastLane()
     {
         while (true)
         {
@@ -46,5 +66,31 @@ public class ItemSpawner : MonoBehaviour
             GameObject itemFast = Instantiate(item, spawnPos, item.transform.rotation);
             itemFast.GetComponent<MoveItem>().goingLeft = true;
         }
+    }
+
+    IEnumerator SpawnSushiSet()
+    {
+        int index = Random.Range(0, sushiSets.Count);
+        SushiSet chosenSet = sushiSets[index];
+
+        // spawn sign plate first
+        Instantiate(chosenSet.signPlate, spawnPos, chosenSet.signPlate.transform.rotation);
+        yield return new WaitForSeconds(2.0f); // delay before set
+
+        // spawn the set of sushi
+        foreach (GameObject itemPrefab in chosenSet.ItemPrefabs)
+        {
+            Instantiate(itemPrefab, spawnPos, itemPrefab.transform.rotation);
+            yield return new WaitForSeconds(2.0f); // Short delay between plates
+        }
+
+    }
+
+    void SpawnSinglePlate()
+    {
+        int index = Random.Range(0, singleSushiList.Count);
+        GameObject singlePlate = singleSushiList[index];
+        Instantiate(singlePlate, spawnPos, singlePlate.transform.rotation);
+        Debug.Log("Special Item!");
     }
 }
