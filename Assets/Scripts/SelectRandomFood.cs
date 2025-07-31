@@ -3,6 +3,7 @@ using UnityEngine;
 public class SelectRandomFood : MonoBehaviour
 {
     public GameObject[] foodList;
+    private float rightBound = 11.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +15,9 @@ public class SelectRandomFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.x > rightBound)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6830255931696355576}
   - component: {fileID: 8920707625281813515}
-  - component: {fileID: 3580241077950673029}
+  - component: {fileID: 4595178956561469891}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -169,7 +169,7 @@ MonoBehaviour:
   foodList:
   - {fileID: 2211510458787516562, guid: 126a03e5371fb407eb4f4de06b365b67, type: 3}
   - {fileID: 8550105274474138976, guid: 7e5a73a76f4d74e72beb85ff7b5f8ffa, type: 3}
---- !u!114 &3580241077950673029
+--- !u!114 &4595178956561469891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,10 +178,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9204500732749882723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20808d21ad8904c45a401677ff111af6, type: 3}
+  m_Script: {fileID: 11500000, guid: 60b0525c88be44113a9fe7b5bfb26185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1001 &1022439021708795192
 PrefabInstance:
   m_ObjectHideFlags: 0

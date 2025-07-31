@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+    public int points;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,10 +14,12 @@ public class Food : MonoBehaviour
     {
 
     }
-    
-    private void OnMouseDown() {
+
+    private void OnMouseDown()
+    {
         // add functinoality to only delete if the container is opened
         // another idea: check whether child container or sushi was clicked from the Item Game object instead?
         Destroy(gameObject);
+        GameManager.Instance.AddToScore(points);
     }
 }
