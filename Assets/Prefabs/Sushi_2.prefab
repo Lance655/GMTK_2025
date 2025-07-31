@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9111212190121626508}
   - component: {fileID: 535133752728150608}
   - component: {fileID: 1490668128909804498}
+  - component: {fileID: 4014209037091019640}
   m_Layer: 0
   m_Name: Sushi_2
   m_TagString: Untagged
@@ -97,6 +98,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8550105274474138976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2391f963df64741c38f94bfcb7cbb5ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 9796ba4f5f39c44f6acd6536b6691626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4014209037091019640
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550105274474138976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0.21133333, z: 0}
