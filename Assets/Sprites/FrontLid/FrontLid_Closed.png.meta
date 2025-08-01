@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c99a479ea7ce465aaf0a55a71f9e59f
+guid: 2970805446e5a481ea58a497ed63da5e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -116,10 +116,10 @@ TextureImporter:
       name: FrontLid_Closed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 848
-        height: 663
+        x: 1081
+        y: 1226
+        width: 850
+        height: 665
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

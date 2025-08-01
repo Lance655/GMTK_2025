@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a1433eac3c5a48e680604b976a56766
+guid: 1121e250e26a647a6aaee5b0f06fe7a9
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -119,10 +119,10 @@ TextureImporter:
       name: FrontLid_HalfOpen_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 942
-        height: 199
+        x: 1029
+        y: 1448
+        width: 944
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: FrontLid_HalfOpen_1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 183
+        x: 1060
+        y: 1632
         width: 855
-        height: 384
+        height: 385
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

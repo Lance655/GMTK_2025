@@ -10,7 +10,7 @@ public class Container : MonoBehaviour
 
     void Awake()
     {
-        // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         myCollider = GetComponent<CircleCollider2D>();
 
         if (outlineEffect != null)
@@ -25,13 +25,13 @@ public class Container : MonoBehaviour
 
     public void Toggle()
     {
-        isOpen = !isOpen;
+        isOpen = !isOpen; 
 
-        // if (animator != null)
-        // {
-        //     animator.SetFloat("direction", isOpen ? 1f : -1f);
-        //     animator.Play("GameConsole_Open", -1, isOpen ? 0f : 1f);
-        // }
+        if (animator != null)
+        {
+            animator.SetFloat("direction", isOpen ? 1f : -1f);
+            animator.Play("Container_Open", -1, isOpen ? 0f : 1f);
+        }
 
         // Disable collider if open to allow clicks to pass through
         if (myCollider != null)

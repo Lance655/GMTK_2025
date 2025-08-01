@@ -19,8 +19,6 @@ public class Food : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // add functinoality to only delete if the container is opened
-        // another idea: check whether child container or sushi was clicked from the Item Game object instead?
         if (container.GetComponent<Container>().IsOpen)
         {
             Destroy(gameObject);
