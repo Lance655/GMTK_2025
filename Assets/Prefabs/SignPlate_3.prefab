@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.45612317
       objectReference: {fileID: 0}
+    - target: {fileID: 2507102416277665362, guid: a3f248e7a8e8e4413acf63cd9c2f5fea, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5326258325703622742, guid: a3f248e7a8e8e4413acf63cd9c2f5fea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.004543063

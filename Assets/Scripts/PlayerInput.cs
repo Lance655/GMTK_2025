@@ -9,17 +9,21 @@ public class PlayerInput : MonoBehaviour
     {
         // Raycast from mouse position
         Vector3 mousePos = Input.mousePosition;
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+        Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
+        // RaycastHit2D hit = Physics2D.GetRayIntersection(ray); // Og
+
+        RaycastHit2D hit = Physics2D.Raycast(mouseRay.origin, mouseRay.direction);
 
         // Get container component if hit
         if (hit.collider != null)
         {
             currentContainer = hit.collider.GetComponentInParent<Container>();
+            Debug.Log("currentContainer is not null ", currentContainer);
         }
         else
         {
             currentContainer = null;
+            Debug.Log("currentContainer is null");
         }
 
         // Highlight the newly hovered container, unhighlight previous
@@ -37,6 +41,7 @@ public class PlayerInput : MonoBehaviour
         // Toggle container open/close on F key
         if (Input.GetKeyDown(KeyCode.F) && currentContainer != null)
         {
+            Debug.Log("F key");
             currentContainer.Toggle();
         }
     }
