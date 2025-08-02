@@ -81,7 +81,7 @@ public class ItemSpawner : MonoBehaviour
         foreach (GameObject itemPrefab in chosenSet.ItemPrefabs)
         {
             Instantiate(itemPrefab, spawnPos, itemPrefab.transform.rotation);
-            yield return new WaitForSeconds(2.0f); // Short delay between plates
+            yield return new WaitForSeconds(2.5f); // Short delay between plates
         }
 
     }
