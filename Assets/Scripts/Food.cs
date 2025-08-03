@@ -19,7 +19,12 @@ public class Food : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (container.GetComponent<Container>().IsOpen)
+        if (container == null)
+        {
+            Destroy(gameObject);
+            GameManager.Instance.AddToScore(points);
+        }
+        else if (container.GetComponent<Container>().IsOpen)
         {
             Destroy(gameObject);
             GameManager.Instance.AddToScore(points);
