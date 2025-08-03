@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b0525c88be44113a9fe7b5bfb26185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightSpeed: 1
+  rightSpeed: 0.7
   leftSpeed: 10
   goingLeft: 0
 --- !u!1 &1697446366951479525
@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507102416277665362, guid: a3f248e7a8e8e4413acf63cd9c2f5fea, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5326258325703622742, guid: a3f248e7a8e8e4413acf63cd9c2f5fea, type: 3}
       propertyPath: m_LocalPosition.x

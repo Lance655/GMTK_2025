@@ -14,13 +14,15 @@ public class ItemSpawner : MonoBehaviour
     public List<SushiSet> sushiSets;
     public List<GameObject> singleSushiList;  // For random singles
     public GameObject item;
+    public GameObject topConveyorBelt;
     public float spawnInterval = 2.5f;
-    private float spawnX = -10f;
-    private float spawnY = -1.5f;
+
+    // private float spawnX = -10f;
+    // private float spawnY = 0.84f;
     private float spawnXFast = 11.0f;
     private float spawnYFast = 2.7f;
 
-    private Vector3 spawnPos = new Vector3(-10f, -1.5f, 0); // copied position from spawnX, spawnY
+    private Vector3 spawnPos = new Vector3(-10f, 0.84f, 0); // copied position from spawnX, spawnY
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,15 +43,17 @@ public class ItemSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnInterval);
 
-            float coinFlip = Random.Range(0f, 1f);
-            if (coinFlip > 0.9)
-            {
-                SpawnSinglePlate();
-            }
-            else
-            {
-                yield return StartCoroutine(SpawnSushiSet()); // wait until the set is done before proceeding
-            }
+            // float coinFlip = Random.Range(0f, 1f);
+            // if (coinFlip > 0.9)
+            // {
+            //     SpawnSinglePlate();
+            // }
+            // else
+            // {
+            //     yield return StartCoroutine(SpawnSushiSet()); // wait until the set is done before proceeding
+            // }
+
+            yield return StartCoroutine(SpawnSushiSet()); // wait until the set is done before proceeding
         }
     }
 
@@ -65,6 +69,19 @@ public class ItemSpawner : MonoBehaviour
 
             GameObject itemFast = Instantiate(item, spawnPos, item.transform.rotation);
             itemFast.GetComponent<MoveItem>().goingLeft = true;
+
+            // Run the "animation" only once:
+            Debug.Log("spawned fast lane");
+            if (topConveyorBelt == null)
+                {
+                    Debug.LogError("Top Conveyor Belt is not assigned in the inspector!");
+                }
+            else
+                {
+                    StartCoroutine(topConveyorBelt.GetComponent<ConveyorBelt>().RunTopConveyor());
+                }
+            // StartCoroutine(topConveyorBelt.GetComponent<ConveyorBelt>().RunTopConveyor());
+            Debug.Log("called conveyor");
         }
     }
 
@@ -75,7 +92,7 @@ public class ItemSpawner : MonoBehaviour
 
         // spawn sign plate first
         Instantiate(chosenSet.signPlate, spawnPos, chosenSet.signPlate.transform.rotation);
-        yield return new WaitForSeconds(2.0f); // delay before set
+        yield return new WaitForSeconds(2.5f); // delay before set
 
         // spawn the set of sushi
         foreach (GameObject itemPrefab in chosenSet.ItemPrefabs)

@@ -18,12 +18,12 @@ public class PlayerInput : MonoBehaviour
         if (hit.collider != null)
         {
             currentContainer = hit.collider.GetComponentInParent<Container>();
-            Debug.Log("currentContainer is not null ", currentContainer);
+            // Debug.Log("currentContainer is not null ", currentContainer);
         }
         else
         {
             currentContainer = null;
-            Debug.Log("currentContainer is null");
+            // Debug.Log("currentContainer is null");
         }
 
         // Highlight the newly hovered container, unhighlight previous
