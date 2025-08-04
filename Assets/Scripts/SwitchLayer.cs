@@ -8,7 +8,7 @@ public class SwitchLayer : MonoBehaviour
     public void Switch()
     {
         spriteRenderer.sortingOrder = newSortingOrder;
-        Debug.Log("Switched layer!");
+        // Debug.Log("Switched layer!");
     }
 
 }

@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL Builds;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL_builds/build6;/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL_builds/build5;/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL build/webgl/build4;/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL build/webgl/build3;/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL build/webgl/build2;/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/New WebGL Builds;/Users/lancesinson/Desktop/Documents/Unity/Game Jams/GMTK2025/WebGL Builds;;;\"}"
             }
         ]
     }

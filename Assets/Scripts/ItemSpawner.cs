@@ -71,17 +71,17 @@ public class ItemSpawner : MonoBehaviour
             itemFast.GetComponent<MoveItem>().goingLeft = true;
 
             // Run the "animation" only once:
-            Debug.Log("spawned fast lane");
+            // Debug.Log("spawned fast lane");
             if (topConveyorBelt == null)
                 {
-                    Debug.LogError("Top Conveyor Belt is not assigned in the inspector!");
+                    // Debug.LogError("Top Conveyor Belt is not assigned in the inspector!");
                 }
             else
                 {
                     StartCoroutine(topConveyorBelt.GetComponent<ConveyorBelt>().RunTopConveyor());
                 }
             // StartCoroutine(topConveyorBelt.GetComponent<ConveyorBelt>().RunTopConveyor());
-            Debug.Log("called conveyor");
+            // Debug.Log("called conveyor");
         }
     }
 
@@ -108,6 +108,6 @@ public class ItemSpawner : MonoBehaviour
         int index = Random.Range(0, singleSushiList.Count);
         GameObject singlePlate = singleSushiList[index];
         Instantiate(singlePlate, spawnPos, singlePlate.transform.rotation);
-        Debug.Log("Special Item!");
+        // Debug.Log("Special Item!");
     }
 }

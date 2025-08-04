@@ -41,7 +41,7 @@ public class PlayerInput : MonoBehaviour
         // Toggle container open/close on F key
         if (Input.GetKeyDown(KeyCode.F) && currentContainer != null)
         {
-            Debug.Log("F key");
+            // Debug.Log("F key");
             currentContainer.Toggle();
         }
     }
